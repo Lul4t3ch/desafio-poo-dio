@@ -62,6 +62,18 @@ public class Dev {
         this.conteudosConcluidos = conteudosConcluidos;
     }
 
+    public String gerarCertificado(Bootcamp bootcamp) {
+        if (this.conteudosInscritos.isEmpty() == true) {
+            return "\n--------------------------------------------------" +
+                    "\n***  Certificado de Conclusão  ***\n" +
+                    "Certificamos que " + this.nome + " conclui com êxito o bootcamp: " +
+                    bootcamp.getNome() + "\ncom data inicial " + bootcamp.getDataInicial() + " e data final " + bootcamp.getDataFinal() +
+                    "\n-----------------------------------------------\n";
+        } else {
+            return "Você ainda não concluiu o bootcamp.";
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
